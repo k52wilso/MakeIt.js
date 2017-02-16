@@ -10,6 +10,4 @@ Component.prototype.init = function(name,model){
 	this.name = name;
 	this.model = model;
 	this.state = true;
-}
-
-export {Component}
+};

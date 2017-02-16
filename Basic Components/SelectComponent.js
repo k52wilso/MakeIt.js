@@ -1,8 +1,10 @@
 /*This file details a SelectComponent: a select dropdown for a page*/
 
-import{Component} from 'Component.js'
+function SelectComponent(){
 
-var SelectComponent = new Component();
+}
+
+SelectComponent.prototype = Component.prototype;
 
 //Variable to hold options 
 SelectComponent.options;
