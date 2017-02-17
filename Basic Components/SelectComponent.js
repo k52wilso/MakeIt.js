@@ -42,10 +42,11 @@ SelectComponent.prototype.view = function(){
 		option.appendChild(display);
 		select.appendChild(option);
 	});
+
+	//Adds an event listener to see display and value that were selected
+	select.addEventListener('change',function(){
+		console.log("Value: " + this.value);
+	});
 	return select;
 };
 
-//This function will trigger each time the component changes
-SelectComponent.prototype.onChange = function(){
-
-};
