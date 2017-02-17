@@ -2,7 +2,7 @@
 /*Param: */
 function SelectComponent(componentName,model){
 	this.options = [];
-
+    this.element;
 	if(modelManager.instanceOf(model)){
 		this.init(componentName,model);
 	}else{
@@ -42,11 +42,11 @@ SelectComponent.prototype.view = function(){
 		option.appendChild(display);
 		select.appendChild(option);
 	});
-
-	//Adds an event listener to see display and value that were selected
-	select.addEventListener('change',function(){
-		console.log("Value: " + this.value);
-	});
+	this.element = select;
 	return select;
 };
 
+/*What to do when the onchange Event occurs*/
+SelectComponent.prototype.onChange = function(callback){
+	this.element.addEventListener('change',callback());
+}

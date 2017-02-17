@@ -15,7 +15,7 @@ ModelManager.prototype.instanceOf = function(model){
 };
 
 //Add a models
-ModelManager.prototype.addmodels = function(model){
+ModelManager.prototype.addModel = function(model){
 	if(!this.instanceOf(model)){
 		this.models[model.name] = model;
 	}else{
@@ -23,10 +23,19 @@ ModelManager.prototype.addmodels = function(model){
 	}
 };
 //remove a model from models
-ModelManager.prototype.removemodels = function(model){
+ModelManager.prototype.removeModel = function(model){
 	if(this.instanceOf(model)){
 		delete this.models[model.name];
 	}else{
 		console.log("This model does not exist.");
 	}
 };
+
+//Update the model
+ModelManager.prototype.updateModel = function(model){
+	if(this.instanceOf(model)){
+		this.models[model.name] = model;
+	}else{
+		console.log("This model does not exist.");
+	}
+}
