@@ -15,13 +15,15 @@ Model.prototype.init = function(name){
 
 //Function: Bind Data to the Model
 //Parameter: file -> the name of the file that will fetch the data
-Model.prototype.bindData = function(file){
+//Parameter: callback -> a function to be executed once data is binded
+Model.prototype.bindData = function(file,callback){
 	var model = this;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	    if (this.readyState == 4 && this.status == 200) {
 	       try {
 	       		model.data = JSON.parse(xhttp.responseText);
+	       		callback();
 	       }catch(e){
 	       		console.log('Invalid JSON: ' + e);
 	       }

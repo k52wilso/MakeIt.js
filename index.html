@@ -8,9 +8,41 @@
 	<title>KWM</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <style>
+        html,body {
+      width:100%;
+      height:100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container-fluid {
+        width:100%;
+        height:100%;
+        padding: 0;
+  } 
+    .row-fluid {
+      width:100%;
+      margin:0 !important;
+    }
+
+    #header {
+      background: rgba(0,0,0,0.7);
+      height:20%;
+    }
+    .title {
+      color:white;
+    }
+    </style>
   </head>
   <body id="mainBody">
-
+      <div id="header" class="container-fluid">
+        <div class="row-fluid">
+          <h3 class="title">Contact</h3>
+        </div>
+        <div id="componentList" class="row-fluid">
+          
+        </div>
+      </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="./Model/Model.js"></script>
@@ -22,6 +54,9 @@
   <script src="./Basic Components/InputComponent.js"></script>
   <script src="./Basic Components/Button.js"></script>
   <script src="./Basic Components/Modal.js"></script>
+
+  <!-- Test Script for Components -->
+  <script src="./test.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>

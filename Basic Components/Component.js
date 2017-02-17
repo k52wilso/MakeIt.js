@@ -15,3 +15,10 @@ Component.prototype.init = function(name,model){
 	this.model = model;
 	this.state = true;
 };
+
+Component.prototype.isModelLoaded = function(){
+	if(this.model !== undefined){
+		return true;
+	}
+	return false;
+}

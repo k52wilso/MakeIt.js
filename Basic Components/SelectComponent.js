@@ -11,7 +11,7 @@ function SelectComponent(componentName,model){
 	
 }
 
-SelectComponent.prototype = Component.prototype;
+SelectComponent.prototype = new Component();
 
 
 

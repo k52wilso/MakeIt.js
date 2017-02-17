@@ -13,7 +13,7 @@ function InputComponent(componentName,model){
 }
 
 /*Extend the Component Object*/
-InputComponent.prototype = Component.prototype;
+InputComponent.prototype = new Component();
 
 //Function: set the type of the input
 //Parameter: type -> the type that the input will be

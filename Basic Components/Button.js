@@ -6,7 +6,7 @@ function Button(buttonName){
 }
 
 /*Extend Component*/
-Button.prototype = Component.prototype;
+Button.prototype = new Component();
 
 //Function: set value in button
 //Parameter: value -> the value for the button

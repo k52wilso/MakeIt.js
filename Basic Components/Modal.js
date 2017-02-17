@@ -5,7 +5,7 @@ function Modal(modalName){
 }
 
 /*Extending the Component Object*/
-Modal.prototype = Component.prototype;
+Modal.prototype = new Component();
 
 //Function: Create HTML element
 //Parameter: None
