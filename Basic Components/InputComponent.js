@@ -12,20 +12,23 @@ function InputComponent(componentName,model){
 	}
 }
 
-//Extend Component Object
+/*Extend the Component Object*/
 InputComponent.prototype = Component.prototype;
 
-//Specify the type
+//Function: set the type of the input
+//Parameter: type -> the type that the input will be
 InputComponent.prototype.setType = function(type){
 	this.type = type;
 }
 
-//Set the value for input
+//Function: set the value of the input
+//Parameter: value -> the value for the input
 InputComponent.prototype.setValue = function(value){
     this.value = value;
 }
 
-//Set its state
+//Function: set the type of the input
+//Parameter: type -> the type that the input will be
 InputComponent.prototype.setEditable = function(state){
 	this.state =state; //SHOULD be sent from server-side
 	if(this.state == false){
@@ -35,7 +38,9 @@ InputComponent.prototype.setEditable = function(state){
 	}
 }
 
-//Create the HTML element
+//Function: Create HTML element
+//Parameter: None
+//Return: the element that was created
 InputComponent.prototype.view = function(){
 	var input = document.createElement("INPUT");
 	input.setAttribute('component-id',this.name);
@@ -48,11 +53,16 @@ InputComponent.prototype.view = function(){
 	return input;
 }
 
-//Change the model when this is called
-InputComponent.prototype.onChange =function(){
-	var thisComponent = this;
-	this.element.addEventListener('change',function(){
-		thisComponent.model.data[thisComponent.value] = this.value;
-		modelManager.updateModel(thisComponent.model);
-	});
+//Function: Execute this function when 'onChange' occurs
+//Parameter: Optional callback function
+InputComponent.prototype.onChange =function(callback){
+	if(callback === undefined){
+		var thisComponent = this;
+		this.element.addEventListener('change',function(){
+			thisComponent.model.data[thisComponent.value] = this.value;
+			modelManager.updateModel(thisComponent.model);
+		});
+	}else{
+		callback();
+	}
 }

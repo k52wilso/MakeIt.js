@@ -6,6 +6,10 @@ function Component(){
 	var state;
 }
 
+
+//Function: Initialize the Component
+//Parameter: name -> the name of the component
+//Parameter: model -> the model for the component
 Component.prototype.init = function(name,model){
 	this.name = name;
 	this.model = model;

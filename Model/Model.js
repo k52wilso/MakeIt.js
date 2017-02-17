@@ -4,15 +4,17 @@ function Model() {
 	var data;
 }
 
-// This function initializes the model's name 
-// Param: name you would like to be set
+
+//Function: initialize the model
+//Parameter: name -> the name of the model
 Model.prototype.init = function(name){
 	this.name = name;
 	this.data = {};
 };
 
-//This function will obtain data for the model
-//Param: file to return data from server
+
+//Function: Bind Data to the Model
+//Parameter: file -> the name of the file that will fetch the data
 Model.prototype.bindData = function(file){
 	var model = this;
 	var xhttp = new XMLHttpRequest();
@@ -29,15 +31,17 @@ Model.prototype.bindData = function(file){
 	xhttp.send();
 };
 
-//This function will display all properities(keys) of the data
-//Param: None
+
+//Function: Display all the data within the model
+//Parameter: None
 Model.prototype.displayAll = function(){
 	return Object.keys(this.data);
 };
 
-//This function will change the value for the given key in the model data
-//Param: the key 
-//Param: the new value 
+
+//Function: Update the model
+//Parameter: key -> the key for the model data
+//Parameter: newValue -> the newValue for the specified key
 Model.prototype.set = function(key,newValue){
 	if(this.data.hasOwnProperty(key)){
 		this.data[key] = newValue;
@@ -46,8 +50,9 @@ Model.prototype.set = function(key,newValue){
 	}
 };
 
-//This function will return a specific value for a given key
-//Param: the key 
+
+//Function: get the value at the specified key
+//Parameter: key -> the key for the model
 Model.prototype.get = function(key){
 	if(this.data.hasOwnProperty(key)){
 		return this.data[key];

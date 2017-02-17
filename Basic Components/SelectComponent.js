@@ -14,8 +14,10 @@ function SelectComponent(componentName,model){
 SelectComponent.prototype = Component.prototype;
 
 
-//Set what the user will see in the select dropdown 
-// Value will be what is behind each option
+
+//Function: set to set the display and value
+//Parameter: displayText -> what the client (user) will see
+//Parameter: value -> the value behind the displayText
 SelectComponent.prototype.setDisplayValue = function(displayText,value){
 	var selectThis = this;
 	this.model.data.forEach(function(element){
@@ -26,12 +28,9 @@ SelectComponent.prototype.setDisplayValue = function(displayText,value){
 	});
 };
 
-//Set the value behind each option in select dropdown
 
-
-// This function will create the selectComponent: what will be displayed on the page
-//Param: None
-//Return: the html 
+//Function: Create HTML element
+//Parameter: None
 SelectComponent.prototype.view = function(){
 	var select = document.createElement("SELECT");
 	select.setAttribute('component-id',this.name);
@@ -46,7 +45,9 @@ SelectComponent.prototype.view = function(){
 	return select;
 };
 
-/*What to do when the onchange Event occurs*/
+
+//Function: Execute this function when 'onChange' occurs
+//Parameter: callback -> the function to execute when change occurs
 SelectComponent.prototype.onChange = function(callback){
 	this.element.addEventListener('change',callback());
 }
