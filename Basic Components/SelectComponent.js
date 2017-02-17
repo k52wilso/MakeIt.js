@@ -1,28 +1,48 @@
 /*This file details a SelectComponent: a select dropdown for a page*/
+/*Param: */
+function SelectComponent(componentName,model){
+	this.options = [];
 
-function SelectComponent(){
-
+	if(modelManager.instanceOf(model)){
+		this.init(componentName,model);
+	}else{
+		console.log('This model has not been created yet.');
+	}
+	
 }
 
 SelectComponent.prototype = Component.prototype;
 
-//Variable to hold options 
-SelectComponent.options;
 
-//This function will bind the data as options 
-//Param:None
-//Return: an array containing objects of ("display":"actualValue") pairs
-SelectComponent.prototype.bindData = function(){
-	 this.options = [];
+//Set what the user will see in the select dropdown 
+// Value will be what is behind each option
+SelectComponent.prototype.setDisplayValue = function(displayText,value){
+	var selectThis = this;
+	this.model.data.forEach(function(element){
+		var option = {};
+		option.displayText = element[displayText];
+		option.value = element[value];
+		selectThis.options.push(option);
+	});
 };
+
+//Set the value behind each option in select dropdown
+
 
 // This function will create the selectComponent: what will be displayed on the page
 //Param: None
 //Return: the html 
 SelectComponent.prototype.view = function(){
-	return {
-		//return the html with the databind;
-	}
+	var select = document.createElement("SELECT");
+	select.setAttribute('component-id',this.name);
+	this.options.forEach(function(element){
+		var option = document.createElement('OPTION');
+		var display = document.createTextNode(element.displayText);
+		option.setAttribute('value',element.value);
+		option.appendChild(display);
+		select.appendChild(option);
+	});
+	return select;
 };
 
 //This function will trigger each time the component changes
