@@ -28,14 +28,38 @@ model.bindData('./index.php',function(){
 
 	//Initial page load: get the current model
 	var contactModel = new Model();
+	contactModel.init();
 	contactModel.data = thisModel.findData(thisModel.data,SelectComponentElement.options[SelectComponentElement.selectedIndex].value);
+
+	//add to manager 
+	// modelManager.addModel(contactModel);
+
 	var contactname = document.getElementById('contactname');
-	var email = document.getElementById('email');
-	var number = document.getElementById('number');
+	// var email = document.getElementById('email');
+	// var number = document.getElementById('number');
+	/*Input Components*/
 	var nameInputComponent = new InputComponent('nameInputComponent',contactModel);
+	nameInputComponent.setType('text');
+	nameInputComponent.setValue('fullname');
+
 	var emailInputComponent = new InputComponent('emailInputComponent',contactModel);
-	var numberInputComponent = new InputComponent('numberInputComponent',contactModel);
+	emailInputComponent.setType('text');
+	emailInputComponent.setValue('email');
 	
+	var numberInputComponent = new InputComponent('numberInputComponent',contactModel);
+	numberInputComponent.setType('text');
+	numberInputComponent.setValue('number');
+
+	
+	// Create views and append 
+	contactname.appendChild(nameInputComponent.view());
+	email.appendChild(emailInputComponent.view());
+	number.appendChild(numberInputComponent.view());
+	nameInputComponent.editable(false);
+	emailInputComponent.editable(false);
+	numberInputComponent.editable(false);
+
+
 
 	//onchange event for component
 	SelectComponentElement.addEventListener('change',function(){
@@ -44,7 +68,13 @@ model.bindData('./index.php',function(){
 		var email = document.getElementById('email');
 		var number = document.getElementById('number');
 		var sel = this;
-		console.log(modelToPass.findData(thisModel.data,sel.options[sel.selectedIndex].value));
+		var modelSelected = modelToPass.findData(thisModel.data,sel.options[sel.selectedIndex].value);
+		var nameInputComponentA = nameInputComponent;
+		var emailInputComponentA = emailInputComponent;
+		var numberInputComponentA = numberInputComponent;
+		nameInputComponentA.element.setAttribute('value',modelSelected[nameInputComponentA.value]);
+		emailInputComponentA.element.setAttribute('value',modelSelected[emailInputComponentA.value]);
+		numberInputComponentA.element.setAttribute('value',modelSelected[numberInputComponentA.value]);
 	});
 	//Add Element to applicable location
 	var componentList = document.getElementById("componentList");

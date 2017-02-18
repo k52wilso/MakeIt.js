@@ -5,11 +5,8 @@ function InputComponent(componentName,model){
 	this.type;
 	this.value;
 	this.state = false;
-	if(modelManager.instanceOf(model)){
 		this.init(componentName,model);
-	}else{
-		console.log('This model has not been created yet.');
-	}
+
 }
 
 /*Extend the Component Object*/
@@ -29,7 +26,7 @@ InputComponent.prototype.setValue = function(value){
 
 //Function: set the type of the input
 //Parameter: type -> the type that the input will be
-InputComponent.prototype.setEditable = function(state){
+InputComponent.prototype.editable = function(state){
 	this.state =state; //SHOULD be sent from server-side
 	if(this.state == false){
 		this.element.setAttribute('readonly','');

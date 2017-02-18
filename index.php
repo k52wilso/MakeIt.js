@@ -13,13 +13,13 @@
 			"username" => "kyle234",
 			"fullname" => "Kyle 234",
 			"email" => "test1@gmail.com",
-			"number" => "416-495-9345"
+			"number" => "416-495-9343"
 			),
 			array(
 			"username" => "ktown22",
 			"fullname" => "Kyle Town",
 			"email" => "test1@gmail.com",
-			"number" => "416-495-9345"
+			"number" => "416-495-9999"
 
 			),
 		);
