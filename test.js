@@ -13,10 +13,10 @@ model.bindData('./index.php',function(){
 
 	//Create our SelectComponent
 	var newSelectComponent = new SelectComponent("newSelectComponent",model);
-	newSelectComponent.setDisplayValue('fullname','username');
+	newSelectComponent.setDisplayValue('username','fullname');
 
 	//Create the HTML element 
-	var SelectComponentElement = newSelectComponent.view();
+	var SelectComponentElement = newSelectComponent.view(' alignCenter col-xs-4 col-xs-offset-4 ');
 
 	// newSelectComponent.onChange(function(value){
 	// 	var modelToPass = thisModel;
@@ -52,9 +52,9 @@ model.bindData('./index.php',function(){
 
 	
 	// Create views and append 
-	contactname.appendChild(nameInputComponent.view());
-	email.appendChild(emailInputComponent.view());
-	number.appendChild(numberInputComponent.view());
+	contactname.appendChild(nameInputComponent.view('  alignInputs col-xs-12 col-xs-offset-6'));
+	email.appendChild(emailInputComponent.view(' alignInputs col-xs-12 col-xs-offset-6 '));
+	number.appendChild(numberInputComponent.view('  alignInputs col-xs-12 col-xs-offset-6 '));
 	nameInputComponent.editable(false);
 	emailInputComponent.editable(false);
 	numberInputComponent.editable(false);

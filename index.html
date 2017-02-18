@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>KWM</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <style>
@@ -31,29 +32,40 @@
     }
     .title {
       color:white;
+      text-align: center;
     }
-    #componentList {
-        height:100%;
+    .alignCenter{
+      text-align: center;
     }
+    #mainContent {
+        height:80%;
+    }
+    .alignInputs {
+      margin: 0 auto;
+    }
+    body {
+      font-family: Oswald;
+    }
+
     </style>
   </head>
   <body id="mainBody">
       <div id="header" class="container-fluid">
-        <div class="row-fluid">
-          <h3 class="title">Contact</h3>
+        <div class="row-fluid alignCenter">
+          <h3 class="title">Select A User:</h3>
         </div>
-        <div id="componentList" class="row-fluid">
+        <div id="componentList" class="row-fluid alignCenter">
           
         </div>
       </div>
       <div id="mainContent" class="container-fluid">
-          <div id="contactname" class="row-fluid">
+          <div id="contactname" class="row-fluid alignCenter">
             <h1>Name</h1>
           </div>
-          <div id="email" class="row-fluid">
+          <div id="email" class="row-fluid alignCenter">
             <h1>Email</h1>
           </div>
-          <div id="number" class="row-fluid">
+          <div id="number" class="row-fluid alignCenter">
             <h1>Number</h1>
           </div>
       </div>

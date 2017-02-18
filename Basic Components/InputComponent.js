@@ -36,10 +36,12 @@ InputComponent.prototype.editable = function(state){
 }
 
 //Function: Create HTML element
-//Parameter: None
+//Parameter: addClass -> optional CSS class
 //Return: the element that was created
-InputComponent.prototype.view = function(){
+InputComponent.prototype.view = function(addClass){
 	var input = document.createElement("INPUT");
+	input.className = addClass;
+	input.style.display = "block";
 	input.setAttribute('component-id',this.name);
 	input.setAttribute('type',this.type);
 	input.setAttribute('value',this.model.data[this.value]);

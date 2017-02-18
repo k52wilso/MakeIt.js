@@ -31,8 +31,9 @@ SelectComponent.prototype.setDisplayValue = function(displayText,value){
 
 //Function: Create HTML element
 //Parameter: None
-SelectComponent.prototype.view = function(){
+SelectComponent.prototype.view = function(addClass){
 	var select = document.createElement("SELECT");
+	select.className = addClass;
 	select.setAttribute('component-id',this.name);
 	this.options.forEach(function(element){
 		var option = document.createElement('OPTION');
