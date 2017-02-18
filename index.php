@@ -11,13 +11,13 @@
 			),
 			array(
 			"username" => "kyle234",
-			"fullname" => "Kyle Wilson-McCormack",
+			"fullname" => "Kyle 234",
 			"email" => "test1@gmail.com",
 			"number" => "416-495-9345"
 			),
 			array(
 			"username" => "ktown22",
-			"fullname" => "Kyle Wilson-McCormack",
+			"fullname" => "Kyle Town",
 			"email" => "test1@gmail.com",
 			"number" => "416-495-9345"
 

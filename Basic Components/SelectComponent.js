@@ -48,6 +48,8 @@ SelectComponent.prototype.view = function(){
 
 //Function: Execute this function when 'onChange' occurs
 //Parameter: callback -> the function to execute when change occurs
-SelectComponent.prototype.onChange = function(callback){
-	this.element.addEventListener('change',callback());
-}
+// SelectComponent.prototype.onChange = function(callback){
+// 	var thisComponent = this;
+// 	var sel = thisComponent.element;
+// 	sel.addEventListener('change',callback(sel.options[sel.selectedIndex].value));
+// }

@@ -62,3 +62,18 @@ Model.prototype.get = function(key){
 		console.log("The key you provided does not exist");
 	}
 };
+
+//Function: find data object by its value
+//Parameter: data -> the key for the model
+Model.prototype.findData = function(dataObject,value){
+	var result = {};
+	for(var i = 0; i < dataObject.length ; i++){
+		var keys = Object.keys(dataObject[i]);
+		for(var j = 0 ; j < keys.length ; j++){
+			if(dataObject[i][keys[j]] == value){
+				result = dataObject[i];
+			}
+		}
+	}
+	return result;
+};
